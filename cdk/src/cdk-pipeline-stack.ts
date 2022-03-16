@@ -15,9 +15,11 @@ export class CdkPipelineStack extends cdk.Stack {
                     authentication: SecretValue.secretsManager("aaron-github-access-token")
                 }),
                 installCommands: [
+                    'echo "INSTALLING AWS-CDK THINGS"',
                     'npm install -g aws-cdk'
                 ],
                 commands: [
+                    'echo "BUILD AND SYNTH"',
                     'cd cdk',
                     'npm ci',
                     'npm run build',
