@@ -23,6 +23,7 @@ export class CdkPipelineStack extends cdk.Stack {
                     'cd cdk',
                     'npm ci',
                     'npm run build',
+                    'cd ../',
                     'npx cdk synth'
                 ]
             })
