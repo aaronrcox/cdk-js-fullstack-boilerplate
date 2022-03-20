@@ -1,0 +1,7 @@
+{
+    "name": "cdk-js-fullstack-boilerplate",
+    "workspaces": [
+        "cdk",
+        "frontend"
+    ]
+}

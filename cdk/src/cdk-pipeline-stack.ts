@@ -17,14 +17,13 @@ export class CdkPipelineStack extends cdk.Stack {
                 }),
                 installCommands: [
                     'echo "INSTALLING AWS-CDK THINGS"',
-                    'npm install -g aws-cdk'
+                    'npm install -g aws-cdk',
+                    'npm install -g angular/cli'
                 ],
                 commands: [
                     'echo "BUILD AND SYNTH"',
-                    'cd cdk',
                     'npm ci',
-                    'npm run build',
-                    'cd ../',
+                    'npm run build --workspaces',
                     'npx cdk synth'
                 ]
             })
