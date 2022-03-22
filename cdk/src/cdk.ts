@@ -1,11 +1,14 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import * as cdk from 'aws-cdk-lib';
+
+import { App } from 'aws-cdk-lib';
+import { Construct } from 'constructs';
 import { CdkFrontendStack } from './cdk-frontend-stack';
 import { CdkPipelineStack } from './cdk-pipeline-stack';
 
-const app = new cdk.App();
-new CdkPipelineStack(app, 'FullStackBoilerplateAppPipelineStack');
+const app = new App();
+new CdkPipelineStack(app, 'FullStackBoilerplateAppPipelineStack', {
+
+});
 
 // new CdkFrontendStack(app, 'FullStackBoilerplateApp', {
 
