@@ -21,7 +21,8 @@ export class CdkPipelineStack extends cdk.Stack {
                     'npm --version',
                     "node --version",
                     'npm install -g aws-cdk',
-                    'npm install -g @angular/cli'
+                    'npm install -g @angular/cli',
+                    'npm install -g @nestjs/cli'
                 ],
                 commands: [
                     'echo "BUILD AND SYNTH"',
@@ -33,7 +34,7 @@ export class CdkPipelineStack extends cdk.Stack {
         });
 
         const deploy = new PipelineStage(this, "Deploy");
-        const deployStage = pipeline.addStage(deploy);
+        pipeline.addStage(deploy);
 
     }
 }

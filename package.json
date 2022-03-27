@@ -2,6 +2,7 @@
     "name": "cdk-js-fullstack-boilerplate",
     "workspaces": [
         "cdk",
-        "frontend"
+        "frontend",
+        "nest-js-backend-api"
     ]
 }

@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
 import { App } from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import { CdkFrontendStack } from './cdk-frontend-stack';
 import { CdkPipelineStack } from './cdk-pipeline-stack';
 
 const app = new App();
