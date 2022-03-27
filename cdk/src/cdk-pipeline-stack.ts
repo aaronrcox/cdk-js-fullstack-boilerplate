@@ -19,7 +19,7 @@ export class CdkPipelineStack extends cdk.Stack {
                     'npm install -g npm',
                     'npm --version',
                     "node --version",
-                    // 'npm install -g aws-cdk',
+                    'npm install -g aws-cdk',
                     // 'npm install -g @angular/cli',
                     // 'npm install -g @nestjs/cli'
                 ],
