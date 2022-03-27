@@ -16,16 +16,14 @@ export class CdkPipelineStack extends cdk.Stack {
                     authentication: SecretValue.secretsManager("aaron-github-access-token")
                 }),
                 installCommands: [
-                    'echo "INSTALLING AWS-CDK THINGS"',
                     'npm install -g npm',
                     'npm --version',
                     "node --version",
-                    'npm install -g aws-cdk',
-                    'npm install -g @angular/cli',
-                    'npm install -g @nestjs/cli'
+                    // 'npm install -g aws-cdk',
+                    // 'npm install -g @angular/cli',
+                    // 'npm install -g @nestjs/cli'
                 ],
                 commands: [
-                    'echo "BUILD AND SYNTH"',
                     'npm ci',
                     'npm run build --workspaces',
                     'npx cdk synth'
