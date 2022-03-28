@@ -11,11 +11,9 @@ export class PipelineStage extends Stage {
 
         const frontend = new CdkFrontendStack(this, 'FrondendApp');
         const backend = new CdkBackendStack(this, "BackendApi");
-        const db = new CdkDbRdsStack(this, "Aurora", {
-            dbAccessItems: [
-                backend.backendHandler
-            ]
-        });
+        const db = new CdkDbRdsStack(this, "Aurora");
+
+        db.grantAccess(backend.backendHandler);
 
     }
 }
