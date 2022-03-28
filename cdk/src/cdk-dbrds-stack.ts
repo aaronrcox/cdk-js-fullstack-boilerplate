@@ -24,7 +24,7 @@ export class CdkDbRdsStack extends Stack {
             vpc: vpc,
             scaling: {
                 autoPause: cdk.Duration.minutes(5),
-                minCapacity: cdk.aws_rds.AuroraCapacityUnit.ACU_1
+                minCapacity: cdk.aws_rds.AuroraCapacityUnit.ACU_2
             }
         });
     }
