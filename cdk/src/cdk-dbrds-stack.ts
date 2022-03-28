@@ -23,7 +23,7 @@ export class CdkDbRdsStack extends Stack {
             defaultDatabaseName: "TestDb",
             vpc: vpc,
             scaling: {
-                autoPause: cdk.Duration.seconds(5),
+                autoPause: cdk.Duration.minutes(5),
                 minCapacity: cdk.aws_rds.AuroraCapacityUnit.ACU_1
             }
         });
