@@ -18,21 +18,6 @@ export class CdkDbRdsStack extends Stack {
 
         const vpc = new ec2.Vpc(this, "AuroraVpc");
 
-        const bastion = new ec2.BastionHostLinux(this, 'BastionHost', {
-            vpc,
-            subnetSelection: {
-                subnetType: ec2.SubnetType.PUBLIC,
-            },
-            blockDevices: [{
-                deviceName: 'EBSBastionHost',
-                volume: ec2.BlockDeviceVolume.ebs(10, {
-                    encrypted: true
-                })
-            }]
-        })
-
-        bastion.connections.allowDefaultPortFromAnyIpv4();
-
         this.cluster = new rds.ServerlessCluster(this, "AuroraDb", {
             engine: rds.DatabaseClusterEngine.AURORA_POSTGRESQL,
             parameterGroup: rds.ParameterGroup.fromParameterGroupName(this, "ParameterGroup", "default.aurora-postgresql10"),
